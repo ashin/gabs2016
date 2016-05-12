@@ -4,3 +4,11 @@ export function setState(state) {
     newState: state
   };
 }
+
+export function setFiltering(filterId, val) {
+	return {
+		type: 'SET_FILTERING',
+		filterId,
+		val
+	}
+}

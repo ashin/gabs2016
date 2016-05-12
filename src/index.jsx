@@ -11,8 +11,6 @@ import reducer from './reducer';
 import App from './components/App';
 import { ListContainer } from './components/List';
 
-console.log(ListContainer);
-
 const store = createStore(reducer);
 
 const routes = <Route component={App}>

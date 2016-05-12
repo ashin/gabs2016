@@ -1136,8 +1136,8 @@ export default [
 
 		"pos": 72,
 		"brewer": "MOON DOG CRAFT BREWERY",
-		"state": "Duke St Draught",
-		"name": "VIC",
+		"state": "VIC",
+		"name": "Duke St Draught",
 		"desc": "In the spirit of one of Australia's most iconic, Very Best, Lagers. This has the finest Australian ingredients and fresh dry hops. For a discerning thirst earned, hard.",
 		"level": "EASIER DRINKING",
 		"style": "Pale Lager",
