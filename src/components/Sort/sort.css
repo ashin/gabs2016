@@ -1,11 +1,22 @@
 .container {
 	display: flex;
+	flex-flow: row wrap;
+	margin:10px 5px;	
 	justify-content: flex-start;
-	align-items: center;
+	align-items:center;
 }
-
+.select {
+	margin:0 10px;
+}
 .toggle {
 	display: inline-block;
 	border:1px solid #999;
 	padding:4px;
+	width:24px;
+	height:24px;
+	text-align: center;
+	font-size:0.9rem;
+	line-height:0.9rem;
+	border-radius:2px;
+	cursor:pointer;
 }

@@ -1,2 +1,4 @@
 .container {
+	flex: 1 100%;
+	margin-bottom:10px;
 }

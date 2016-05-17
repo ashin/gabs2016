@@ -18,7 +18,9 @@ $yellow = #FF8F00;
 }
 	.pos {
 		flex:none;
-		width:50px;
+		min-width:50px;
+		max-width:80px;
+		width:10%;
 		font-size:1.5rem;
 		text-align: left;
 		color:$red;
@@ -27,27 +29,32 @@ $yellow = #FF8F00;
 		display: flex;
 		justify-content: space-between;
 		flex-direction: column;
-		width:400px;
+		min-width:280px;
+		width:65%;
 	}
 		.brewerWrapper {
 			color:$black;
+			display: flex;
+			align-items: center;
 		}
 			.brewer {
+				flex:0 1 auto;
 				font-size:1.1rem;
-				max-width:90%;
 				display:inline-block;
 				overflow:hidden;
 				white-space: nowrap;
 				text-overflow:ellipsis;
 			}
 			.state {
+				flex:0;
 				font-size:0.8rem;
 				vertical-align:super;
 			}
 		.name {
 		}
 	.styleContainer {
-		width:180px;
+		min-width:140px;
+		width:25%;
 		display: flex;
 		justify-content: space-between;
 		flex-direction: column;

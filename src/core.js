@@ -99,7 +99,7 @@ export const INITIAL_STATE = Map({
   filtering: Map(filtering),
   sorters: Map(sorters),
   sortBy: Object.keys(sorters)[0],
-  sortingDirection: 'DESC'
+  sortingDirection: 'DESC' // should be constant but fuck it #drunk
 });
 
 export function setState (state, newState) {
@@ -128,10 +128,7 @@ export function filterBeers (beers, filtering) {
 }
 
 export function sortBeers (beers, sortBy, sortDir) {
-	console.log(sorters);
-	console.log(sortBy);
 	const sortFn = sorters[sortBy].sort;
 	let sortedBeers = beers.sort(sortFn);
-	console.log(sortDir + ' === ASC? = ' +  (sortDir === 'ASC') );
 	return (sortDir === 'ASC') ? sortedBeers.reverse() : sortedBeers;
 }

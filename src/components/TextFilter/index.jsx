@@ -1,6 +1,6 @@
 import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
-
+import s from './text.css'
 
 export default React.createClass({
   mixins: [PureRenderMixin],
@@ -11,10 +11,7 @@ export default React.createClass({
     const { filter } = this.props;
     
     return (
-      <div>
-        {filter.name}:
-        <input type="text" ref="text" onKeyUp={ this.update } />
-      </div>
+      <input type="text" ref="text" onKeyUp={ this.update } className={s.container} placeholder="Search..." />
     );
   }
 });

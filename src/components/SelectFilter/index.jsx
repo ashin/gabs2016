@@ -1,5 +1,6 @@
 import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
+import s from './select.css';
 
 export default React.createClass({
   mixins: [PureRenderMixin],
@@ -9,9 +10,9 @@ export default React.createClass({
   render: function() {
     const { filter } = this.props;
     return (
-      <div>
-        {filter.name}: 
-        <select value={ filter.val } onChange={ this.update }>
+      <div className={s.container}>
+        <span className={s.label}>{filter.name}:</span> 
+        <select value={ filter.val } onChange={ this.update } className={s.select}>
         	<option value="" key="none">-</option>
         	{
         		filter.values.map(filterVal => {

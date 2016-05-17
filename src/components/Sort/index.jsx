@@ -12,12 +12,12 @@ export default React.createClass({
     const { sorters, sortBy, sortingDirection, toggleSortDir } = this.props;
     return (
       <div className={s.container}>
-        Sort by:
-        <select value={ sortBy } onChange={ this.updateSorting }>
+        sort:
+        <select value={ sortBy } onChange={ this.updateSorting } className={s.select}>
         	{ sorters.map(sort => (<option value={sort.id}>{ sort.name }</option>)) }
         </select>
         <a className={s.toggle} onClick={toggleSortDir}>
-        	{ sortingDirection === 'ASC' ? 'up' : 'down' }
+        	{ sortingDirection === 'ASC' ? '⇧' : '⇩' }
         </a>
       </div>
     );

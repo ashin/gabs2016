@@ -246,7 +246,7 @@ export default [
 		"desc": "Part Czech Pilsner and part smoked beer made with house-smoked locally sourced cherry wood, this has a flaming ruby colour and traces of smokey bacon.",
 		"levelName": "Med",
 		"levelVal": 1,
-		"style": "Smoked Beer (non Rauchbier)",
+		"style": "Smoked Beer",
 		"abv": 5.5,
 		"character": "Subdued smolder (Smoke)",
 		"section": 1,
