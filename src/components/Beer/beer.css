@@ -1,3 +1,98 @@
+$black = #222;
+$grey = #999;
+$red = #DB0031;
+$blue = #0059AE;
+$yellow = #FF8F00;
+
 .container {
-	border:2px solid #f00;
+	border-bottom:1px solid #999;
+	color: $blue;
 }
+
+.head {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	height:60px;
+	padding:9px;
+}
+	.pos {
+		flex:none;
+		width:50px;
+		font-size:1.5rem;
+		text-align: left;
+		color:$red;
+	}
+	.nameContainer {
+		display: flex;
+		justify-content: space-between;
+		flex-direction: column;
+		width:400px;
+	}
+		.brewerWrapper {
+			color:$black;
+		}
+			.brewer {
+				font-size:1.1rem;
+				max-width:90%;
+				display:inline-block;
+				overflow:hidden;
+				white-space: nowrap;
+				text-overflow:ellipsis;
+			}
+			.state {
+				font-size:0.8rem;
+				vertical-align:super;
+			}
+		.name {
+		}
+	.styleContainer {
+		width:180px;
+		display: flex;
+		justify-content: space-between;
+		flex-direction: column;
+		color:$black;
+	}
+		.style {
+			font-size:0.9rem;
+			max-width:100%;
+			overflow:hidden;
+			white-space: nowrap;
+			text-overflow:ellipsis;
+		}
+		.abvContainer {
+			display: flex;
+			justify-content: space-between;
+		}
+			.abv {
+
+			}
+			.cost {
+
+			}
+			.glass {
+				font-size:0.8rem;
+			}
+			.level {
+				width:auto;
+				display: inline-block;
+				border:1px solid $grey;
+				border-radius: 3px;
+				padding:0 5px;
+				color:$blue;
+				font-size:0.8rem;
+				line-height:1rem;
+			}
+.body {
+	display:flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	display:none !important;
+	
+}
+	.character {
+
+	}
+	.desc {
+
+	}

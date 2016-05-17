@@ -4,7 +4,6 @@ import Router, {Route} from 'react-router';
 import {createStore, applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
 
-import {setState} from './actionCreators';
 import reducer from './reducer';
 
 //components

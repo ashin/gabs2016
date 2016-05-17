@@ -10,17 +10,33 @@ export default React.createClass({
 
     return (
       <div className={s.container}>
-        <div>{ beer.pos }</div>
-        <div>{ beer.brewer }</div>
-        <div>{ beer.name }</div>
-        <div>{ beer.state }</div>
-        <div>{ beer.name }</div>
-        <div>{ beer.desc }</div>
-        <div>{ beer.level }</div>
-        <div>{ beer.style }</div>
-        <div>{ beer.abv }</div>
-        <div>{ beer.character }</div>
-        <div>{ beer.section }</div>
+        <div className={s.head}>
+          <a title={beer.container} className={s.pos}>
+            { beer.pos }
+          </a>
+          <div className={s.nameContainer}>
+            <div className={s.brewerWrapper}>
+              <span className={s.brewer} title={ beer.brewer }>{ beer.brewer } </span>
+              <span className={s.state}>({ beer.state })</span>
+            </div>
+            <div className={s.name}>{ beer.name }</div>
+          </div>
+          <div className={s.styleContainer}>
+            <div className={s.style} title={ beer.style }>{ beer.style }</div>
+            <div className={s.abvContainer}>
+              <div className={s.abv}>{ beer.abv }%</div>
+              <div className={s.cost}>
+                ${ beer.glass.cost }
+                { beer.glass.fullsize ? (<span className={s.glass}> (half)</span>) : '' }
+              </div>
+              <div className={s.level}>{ beer.levelName }</div>
+            </div>
+          </div>
+        </div>
+        <div className={s.body}>
+          <div className={s.character}>{ beer.character }</div>
+          <div className={s.desc}>{ beer.desc }</div>
+        </div>
       </div>
     );
   }

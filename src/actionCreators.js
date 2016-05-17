@@ -12,3 +12,16 @@ export function setFiltering(filterId, val) {
 		val
 	}
 }
+
+export function setSortBy(sortId) {
+	return {
+		type: 'SET_SORT_BY',
+		sortId
+	}
+}
+
+export function toggleSortDir() {
+	return {
+		type: 'TOGGLE_SORT_DIR'
+	}
+}
