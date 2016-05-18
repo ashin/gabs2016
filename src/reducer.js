@@ -3,6 +3,7 @@ import {
   setFiltering,
   setSortBy,
   toggleSortDir,
+  setShowing,
   INITIAL_STATE
 } from './core';
 
@@ -16,6 +17,8 @@ export default function reducer(state = INITIAL_STATE, action) {
       return setSortBy(state, action.sortId);
     case 'TOGGLE_SORT_DIR':
       return toggleSortDir(state);
+      case 'SET_SHOWING':
+        return setShowing(state, action.toShow);
     default:
       return state;
   }

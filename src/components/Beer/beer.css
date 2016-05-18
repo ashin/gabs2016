@@ -1,8 +1,9 @@
 $black = #222;
 $grey = #999;
-$red = #DB0031;
 $blue = #0059AE;
+$red = #DB0031;
 $yellow = #FF8F00;
+$green = #00BF4D;
 
 .container {
 	border-bottom:1px solid #999;
@@ -86,16 +87,29 @@ $yellow = #FF8F00;
 				border:1px solid $grey;
 				border-radius: 3px;
 				padding:0 5px;
-				color:$blue;
+				color:#fff;
 				font-size:0.8rem;
 				line-height:1rem;
+			}
+			.level--med {
+				@extend .level;
+				border-color: darken($yellow, 10%);
+				background: $yellow;
+			}
+			.level--easy {
+				@extend .level;
+				border-color: darken($green, 10%);
+				background: $green;
+			}
+			.level--hard {
+				@extend .level;
+				border-color: darken($red, 10%);
+				background: $red;
 			}
 .body {
 	display:flex;
 	flex-direction: row;
 	justify-content: flex-start;
-	display:none !important;
-	
 }
 	.character {
 

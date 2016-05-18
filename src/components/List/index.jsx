@@ -12,7 +12,7 @@ import s from './list.css';
 export const List = React.createClass({
   mixins: [PureRenderMixin],
   render: function() {
-    const { beers, filters, setFiltering, sorters, setSortBy, toggleSortDir, sortBy, sortingDirection } = this.props;
+    const { beers, filters, setFiltering, sorters, setSortBy, toggleSortDir, sortBy, sortingDirection, showing, setShowing } = this.props;
     return (
       <div className={s.container}>
         <Filters filters={filters} setFiltering={setFiltering} />
@@ -21,7 +21,7 @@ export const List = React.createClass({
               sortBy={sortBy}
               sortingDirection={sortingDirection}
               toggleSortDir={toggleSortDir} />
-        <Beers beers={beers} />
+        <Beers beers={beers} showing={showing} setShowing={setShowing} />
       </div>
     );
   }
@@ -34,6 +34,7 @@ function mapStateToProps(state) {
   const sorters = state.get('sorters');
   const sortBy = state.get('sortBy');
   const sortingDirection = state.get('sortingDirection');
+  const showing = state.get('showing');
 
   return {
   	beers: sortBeers(filterBeers(beers, filtering), sortBy, sortingDirection),
@@ -41,7 +42,8 @@ function mapStateToProps(state) {
     filtering,
     sorters,
     sortBy,
-    sortingDirection
+    sortingDirection,
+    showing
   }
 }
 

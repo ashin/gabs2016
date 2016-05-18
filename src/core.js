@@ -116,6 +116,11 @@ export function setSortBy (state, sortId) {
 	return newState;
 };
 
+export function setShowing (state, toShow) {
+	let newState = state.set('showing', toShow);
+	return newState;
+};
+
 export function toggleSortDir (state) {
 	let newVal = state.get('sortingDirection') === 'ASC' ? 'DESC' : 'ASC';
 	let newState = state.set('sortingDirection', newVal);

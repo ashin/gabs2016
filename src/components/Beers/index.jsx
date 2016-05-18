@@ -7,11 +7,11 @@ import s from './beers.css';
 export default React.createClass({
   mixins: [PureRenderMixin],
   render: function() {
-    const { beers } = this.props;
+    const { beers, showing, setShowing } = this.props;
 
     return (
       <div className={s.container}>
-        { beers.map(beer => <Beer key={beer.pos} beer={beer} />) }
+        { beers.map(beer => <Beer key={beer.pos} beer={beer} showing={showing} setShowing={setShowing} />) }
       </div>
     );
   }

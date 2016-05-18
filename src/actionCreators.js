@@ -25,3 +25,10 @@ export function toggleSortDir() {
 		type: 'TOGGLE_SORT_DIR'
 	}
 }
+
+export function setShowing(toShow) {
+	return {
+		type: 'SET_SHOWING',
+		toShow
+	}
+}
