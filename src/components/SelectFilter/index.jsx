@@ -6,6 +6,7 @@ export default React.createClass({
   mixins: [PureRenderMixin],
   update: function(event) {
     this.props.setFiltering(this.props.filter.id, event.target.value);
+    e.preventdefault()
   },
   render: function() {
     const { filter } = this.props;

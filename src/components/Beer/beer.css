@@ -6,23 +6,27 @@ $yellow = #FF8F00;
 $green = #00BF4D;
 
 .container {
-	border-bottom:1px solid #999;
+	border-bottom:1px solid #ddd;
 	color: $blue;
+}
+.containerActive {
+	@extend .container;
+	background:#f9f9f9;	
 }
 
 .head {
 	display: flex;
 	flex-direction: row;
 	justify-content: flex-start;
-	height:60px;
+	height:65px;
 	padding:9px;
 }
 	.pos {
 		flex:none;
-		min-width:50px;
-		max-width:80px;
-		width:10%;
-		font-size:1.5rem;
+		min-width:45px;
+		max-width:70px;
+		width:5%;
+		font-size:1.2rem;
 		text-align: left;
 		color:$red;
 	}
@@ -32,6 +36,7 @@ $green = #00BF4D;
 		flex-direction: column;
 		min-width:280px;
 		width:65%;
+		margin-right:10px;
 	}
 		.brewerWrapper {
 			color:$black;
@@ -54,19 +59,18 @@ $green = #00BF4D;
 		.name {
 		}
 	.styleContainer {
-		min-width:140px;
-		width:25%;
-		display: flex;
-		justify-content: space-between;
-		flex-direction: column;
+		min-width:180px;
+		width:30%;
 		color:$black;
 	}
 		.style {
 			font-size:0.9rem;
 			max-width:100%;
+			margin-bottom:5px;
 			overflow:hidden;
 			white-space: nowrap;
 			text-overflow:ellipsis;
+			color:$blue;
 		}
 		.abvContainer {
 			display: flex;
@@ -106,13 +110,20 @@ $green = #00BF4D;
 				border-color: darken($red, 10%);
 				background: $red;
 			}
+			.toggle {
+				margin-left:10px;
+				display: flex;
+				align-items: center;
+			}
+				.toggleButton {
+					cursor: pointer;
+				}
 .body {
-	display:flex;
-	flex-direction: row;
-	justify-content: flex-start;
+	padding:10px 20px 20px;
+	color:$black;
+	font-size:.9rem;
 }
 	.character {
-
 	}
 	.desc {
 

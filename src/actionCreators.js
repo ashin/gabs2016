@@ -32,3 +32,11 @@ export function setShowing(toShow) {
 		toShow
 	}
 }
+
+export function setBeerState(pos, state){
+	return {
+		type: 'SET_BEER_STATE',
+		pos,
+		beerState: state
+	}
+}

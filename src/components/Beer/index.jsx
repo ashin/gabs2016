@@ -1,22 +1,25 @@
 import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
-
+import BeerState from '../BeerState';
 import s from './beer.css';
 
 export default React.createClass({
   mixins: [PureRenderMixin],
   render: function() {
-    const { beer, showing, setShowing } = this.props;
+    const { beer, showing, setShowing, setBeerState } = this.props;
+    const isActive = (showing === beer.pos);
+    const classLevel = s['level--' + String(beer.levelName).toLowerCase()];
+    const containerClass = isActive ? s.containerActive : s.container;
     
     const renderBody = (beer, s) => (
       <div className={s.body}>
         <div className={s.character}>{ beer.character }</div>
         <div className={s.desc}>{ beer.desc }</div>
       </div>
-    )
+    );
 
     return (
-      <div className={s.container}>
+      <div className={ containerClass } onClick={() => setShowing(beer.pos) }>
         <div className={s.head}>
           <a title={beer.container} className={s.pos}>
             { beer.pos }
@@ -34,18 +37,14 @@ export default React.createClass({
               <div className={s.abv}>{ beer.abv }%</div>
               <div className={s.cost}>
                 ${ beer.glass.cost }
-                { !beer.glass.fullsize ? (<span className={s.glass}> (half)</span>) : '' }
+                { !beer.glass.fullsize ? (<span className={s.glass}>(½)</span>) : '' }
               </div>
-              <div className={s['level--' + String(beer.levelName).toLowerCase()]}>{ beer.levelName }</div>
+              <div className={ classLevel }>{ beer.levelName }</div>
+              <BeerState pos={beer.pos} state={beer.userState} setBeerState={setBeerState} />
             </div>
           </div>
-          <div className={s.toggle}>
-            <a onClick={ setShowing.apply(beer.pos) }>
-              { (showing === beer.pos) ? 'show' : 'hide' }
-            </a>
-          </div>
         </div>
-        { (showing === beer.pos) ? renderBody(beer, s) : '' }
+        { isActive ? renderBody(beer, s) : '' }
       </div>
     );
   }
